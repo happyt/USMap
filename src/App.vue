@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <notifications group="map" />
     <Home msg="Welcome to App" />
   </div>
 </template>

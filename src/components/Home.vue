@@ -29,7 +29,7 @@ export default {
       this.$notify({
         group: "map",
         title: "State clicked",
-        text: `You clicked on state with id: ${attr.mapId} and title: ${attr.title}`
+        text: `You clicked on ${attr.title}, index:${attr.colourIndex}`
       });
       this.lastState = attr.title;
 
