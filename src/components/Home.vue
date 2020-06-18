@@ -30,7 +30,7 @@ export default {
         group: "map",
         title: "State clicked",
         type: "success",
-        duration: -1,
+        duration: 2000,
         text: `You clicked on ${attr.title}, index:${attr.colourIndex}`
       });
       this.lastState = attr.title;
