@@ -29,13 +29,12 @@ export default {
       this.$notify({
         group: "map",
         title: "State clicked",
+        type: "success",
+        duration: -1,
         text: `You clicked on ${attr.title}, index:${attr.colourIndex}`
       });
       this.lastState = attr.title;
 
-      console.log(
-        `You clicked on state id: ${attr.mapId}, title: ${attr.title}, colour: ${attr.colourIndex}`
-      );
       //console.log("B", this.myMap);
       // add to array
 
@@ -46,12 +45,6 @@ export default {
       } else {
         this.myMap.push({ id: attr.mapId, colour: attr.colourIndex });
       }
-
-      //    this.myMap.push({ id: attr.mapId, colour: attr.colourIndex });
-
-      var a = { id: attr.mapId, colour: attr.colourIndex };
-      console.log("A", a);
-      //   this.myMap.push(a);
 
       console.log("C", this.myMap);
     }
