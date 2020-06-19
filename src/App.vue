@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <notifications group="map" class="my-style" />
+    <notifications group="map" class="app-style" />
     <Home msg="Welcome to App" />
   </div>
 </template>
@@ -26,11 +26,11 @@ export default {
   margin-top: 60px;
 }
 
-.my-style .notification-title {
+.app-style .notification-title {
   color: black;
   font-size: 20px;
 }
-.my-style .success {
+.app-style .success {
   /*
   Style for specific type of notification, will be applied when you
   call notification with "type" parameter:

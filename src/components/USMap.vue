@@ -33,8 +33,8 @@ export default {
         .size("100%", "100%")
         .viewbox(-400, 0, vue.mapAttr.viewBoxWidth, vue.mapAttr.viewBoxHeight);
       vue.svgContainer = svgContainer;
-      const currentMap = this.myMap;
-      console.log("MAP", currentMap);
+      // const currentMap = this.myMap;
+      //     console.log("MAP", currentMap);
       mapData.forEach(pathObj => {
         vue.generatePath(svgContainer, pathObj);
       });
@@ -51,8 +51,9 @@ export default {
       };
 
       const element = svgCont.path(pathObj["-d"]).attr(attrs);
+
       element.click(function() {
-        const styles = ["map", "highlite", "republican", "democrat"];
+        const styles = ["map", "highlite", "republican", "democrat", "stripe"];
 
         let colourIndex = 0;
         const mapId = this.node.attributes["map-id"].value;
@@ -79,9 +80,34 @@ export default {
   fill: "#8470ff";
   stroke: "red";
 }
-.highlite {
-  fill: rgb(212, 199, 17);
+.highlitex {
+  background: repeating-linear-gradient(
+    45deg,
+    #606dbc,
+    #a73b3b 10px,
+    #465298 10px,
+    #465298 20px
+  );
 }
+
+.stripe {
+  background-image: repeating-linear-gradient(
+    45deg,
+    #fff,
+    #fff 0.08em,
+    var(--r) 0.08em,
+    var(--r) 0.16em
+  );
+}
+
+.svgcss {
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScxMCcgaGVpZ2h0PScxMCc+CiAgPHJlY3Qgd2lkdGg9JzEwJyBoZWlnaHQ9JzEwJyBmaWxsPSd3aGl0ZScgLz4KICA8Y2lyY2xlIGN4PSczLjUnIGN5PSczLjUnIHI9JzMuNScgZmlsbD0nYmxhY2snLz4KPC9zdmc+Cg==");
+}
+
+.highlite {
+  fill: #e3f113;
+}
+
 .republican {
   fill: red;
   stroke: "white";
@@ -89,5 +115,8 @@ export default {
 .democrat {
   fill: blue;
   stroke: "white";
+}
+.split {
+  fill: rgb(147, 43, 173);
 }
 </style>
